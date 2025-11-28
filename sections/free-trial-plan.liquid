@@ -1,0 +1,109 @@
+<section class="free-trial-section" style="background: {{ section.settings.bg_color }};">
+  <div class="main_container">
+    <!-- Back icon (optional) -->
+    <div class="top-icons">
+      <span class="back-icon">←</span>
+      <h3>{{ section.settings.topheading }}</h3>
+    </div>
+    <div class="free_trial_box">
+      <div class="free_image">
+        <img
+          src="{{ section.settings.backgroundimage | img_url: 'master' }}"
+          width=""
+          height=""
+          class="backgorund_image"
+        >
+      </div>
+
+      <div class="free-header">
+        <h3>{{ section.settings.heading }}</h3>
+        <h2>{{ section.settings.title }}</h2>
+        <p class="subtitle">{{ section.settings.subtext }}</p>
+      </div>
+
+      <div class="line-with-text">
+        <p>{{ section.settings.timeline_heading }}</p>
+      </div>
+
+      <!-- Timeline Items -->
+      <div class="timeline_flx">
+        <div class="icon">
+          <img
+            src="{{ section.settings.backgorund_side | img_url: 'master' }}"
+            width=""
+            height=""
+            class="backgorund_side"
+          >
+        </div>
+
+        <div class="timeline-box">
+          {% for item in section.blocks %}
+            <div class="timeline-item">
+              <div class="content">
+                <h4>{{ item.settings.day_title }}</h4>
+                <p>{{ item.settings.day_desc }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <p class="footer-note">{{ section.settings.footer_note }}</p>
+
+      <button class="activate-button">
+        {{ section.settings.button_label }}
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Free Trial Plan Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "backgroundimage",
+      "label": "Success Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "backgorund_side",
+      "label": "Success Image"
+    },
+    { "type": "text", "id": "topheading", "label": "Small Heading", "default": "Your plan" },
+    { "type": "color", "id": "bg_color", "label": "Background Color", "default": "#f8f8f8" },
+    { "type": "text", "id": "heading", "label": "Small Heading", "default": "Your plan" },
+    { "type": "text", "id": "title", "label": "Main Title", "default": "7 day Free Trial" },
+    { "type": "richtext", "id": "subtext", "label": "Sub Text" },
+    { "type": "text", "id": "timeline_heading", "label": "Timeline Heading", "default": "WHEN WILL YOU BE CHARGED" },
+    {
+      "type": "text",
+      "id": "footer_note",
+      "label": "Bottom Note",
+      "default": "₹2 will be charged to validate payment method."
+    },
+    { "type": "text", "id": "button_label", "label": "Button Label", "default": "Activate now" }
+  ],
+  "blocks": [
+    {
+      "type": "day_item",
+      "name": "Day Item",
+      "settings": [
+        { "type": "text", "id": "day_title", "label": "Day Title", "default": "Today" },
+        {
+          "type": "textarea",
+          "id": "day_desc",
+          "label": "Day Description",
+          "default": "Start your fitness journey with your 7-day free trial."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Free Trial Section"
+    }
+  ]
+}
+{% endschema %}

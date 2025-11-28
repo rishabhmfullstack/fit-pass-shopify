@@ -1,0 +1,480 @@
+/* font-family code */
+@font-face {
+    font-family: 'Figtree';
+    src: url('https://cdn.shopify.com/s/files/1/0668/4209/9772/files/Figtree-Medium.ttf?v=1764265216') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Figtree';
+    src: url('https://cdn.shopify.com/s/files/1/0668/4209/9772/files/Figtree-Regular.ttf?v=1764265216') format('truetype');
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: 'Figtree';
+    src: url('https://cdn.shopify.com/s/files/1/0668/4209/9772/files/Figtree-Bold.ttf?v=1764265216') format('truetype');
+    font-weight: 700;
+  }
+  
+  body {
+    font-family: 'Figtree', sans-serif;
+     }
+  
+  .main_container {
+    padding: 20px;
+  }
+
+
+
+
+  /* payment-completion.liquid css Start */
+
+  .payment_complemation {
+    width: 100%;
+    height: 100vh; 
+    background: #ff004c; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .payment_complemation .center_panel {
+    width: 30%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .payment_complemation h2 {
+        color: white;
+        font-size: 28px;
+        text-align: center;
+        font-weight: 700;
+        line-height: 28px;
+        font-family: 'Figtree', sans-serif;
+        margin:0;
+  }
+
+  @media (max-width: 767px) {
+    .payment_complemation h2 {
+        color: white;
+        font-size: 28px;
+        text-align: center;
+        font-weight: 700;
+        line-height: 28px;
+        font-family: 'Figtree', sans-serif;
+        margin:0;
+
+  }
+}
+  
+  /* payment-completion.liquid css End */
+
+  /* success-activation-screen.liquid Css start */
+   .backgorund_image {
+    width: 100%;
+    position: relative;
+  }
+  .backgorund_image img.backgorund_image {
+    width: 100%;
+}
+.backgorund_image .success-icon {
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  padding: 10px 35px;
+}
+.backgorund_image .success-icon span{
+  display: flex;
+  justify-content: center;
+}
+.backgorund_image .success-icon .successIcon {
+  max-width: 56px;
+}
+.success-icon .success-title {
+    font-size: 28px;
+    font-weight: 700;
+    font-style: Bold;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: center;
+    font-family: 'Figtree', sans-serif;
+    color: #0A1F34;
+    margin:0;
+}
+.main_container .success_content {
+  margin: 20px 0;
+}
+.main_container .success_content p{
+  font-size: 14px;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: center;
+    font-family: 'Figtree', sans-serif;
+    color: #6C7985;
+    margin:0;
+}
+.success-screen-container .main_container{
+   padding: 0;
+}
+.download_container {
+  padding: 28px 20px;
+  margin:12px 0 0;
+  background-color: #FF9B031A;
+  border-radius: 24px 20px 0 0;
+}
+.download_main_title{
+  padding: 0 10px;
+}
+.download_main_title h2 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  font-style: Bold;
+  letter-spacing: 0px;
+  text-align: center;
+  font-family: 'Figtree', sans-serif;
+  color: #0A1F34;
+  margin: 0;
+}
+.download_main_image {
+  margin: 17px 0px 20.21px;
+}
+.download_main_image img {
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+}
+.app-buttons {
+  display: flex;
+  gap: 9.88px;
+}
+.app_col {
+  width: 50%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7.23px;
+  padding: 11.21px 29.87px 11.21px 20px;
+  gap: 10.95px;
+  cursor: pointer;
+}
+.app_col a {
+  display: inline-block;
+  cursor: pointer;
+}
+.app_col a img {
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: contain;
+}
+p.sub_label {
+  font-size: 7.67px;
+  font-weight: 400;
+  font-style: Regular;
+  /* font-family: Inter; */
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  margin: 0;
+}
+.app_label h5 {
+  font-size: 12.79px;;
+  font-weight: 400;
+  font-style: Regular;
+  /* font-family: Inter; */
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+
+  /* success-activation-screen.liquid Css end */
+
+  /* Free-trial.liquid css Start */
+
+  .free_image img {
+    width: 87px;
+    height: 80px;
+    object-fit: contain;
+    display: flex;
+}
+.top-icons {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 18px 0 12px 0 ;
+}
+.top-icons h3 {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-align: center;
+  font-family: 'Figtree', sans-serif;
+  color: #0A1F34;
+  margin: 0;
+}
+.free_image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+
+}
+.free-header {
+  text-align: center;
+}
+.free-header h3{
+  font-size: 10px;
+  line-height: 100%;
+  letter-spacing: 0.6px;
+  text-align: center;
+  font-weight: 700;
+  font-style: Bold;
+  font-family: 'Figtree', sans-serif;
+  margin: 0 0 5px;
+  color: #0A1F34;
+  text-transform: uppercase;
+
+}
+.free-header h2{
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+  font-weight: 700;
+  font-style: Bold;
+  font-family: 'Figtree', sans-serif;
+  margin: 0 0 11px;
+  color: #0A1F34;
+}
+.free-header p {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  font-weight: 500;
+  font-style: Medium;
+  font-family: 'Figtree', sans-serif;
+  color:#6C7985;
+  margin:0;
+}
+.free-header p strong{
+  font-weight: 700;
+  color: #0A1F34;
+}
+.timeline-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.timeline_flx {
+  display: flex;
+  gap: 23px;
+}
+.content h4 {
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-family: 'Figtree', sans-serif;
+  color:#0A1F34;
+  margin: 0;
+}
+.content p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  font-weight: 400;
+  font-style: Regular;
+  font-family: 'Figtree', sans-serif;
+  color: #0A1F34;
+  margin: 1px 0 0;
+}
+  .footer-note {
+    text-align:center;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    text-align: center;
+    color:#6C7985;
+    margin: 30px 0 14px;
+  }
+
+  .activate-button {
+    width: 100%;
+    background: #DC4144;
+    color: white;
+    padding: 14px;
+    border-radius: 40px;
+    font-size: 18px;
+    border: none;
+    font-weight: 700;
+    cursor:pointer;
+  }
+  .line-with-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 28px 0 16px;
+  }
+  
+  .line-with-text::before,
+  .line-with-text::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .line-with-text p {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    line-height: 100%;
+    color: #0A1F34;
+    font-style: Bold;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+  }
+    
+  
+  /* Free-trial.liquid css End */
+
+
+  /* banner css start */
+.fitness-heading p{
+font-weight: 700;
+font-style: Bold;
+font-size: 28px;
+line-height: 30px;
+letter-spacing: 0px;
+text-align: center;
+vertical-align: bottom;
+margin:0;
+}
+.fitness-heading p strong {
+  color:#DC4144;
+}
+.fitness-subheading{
+  font-family: Figtree;
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+line-height: 22px;
+letter-spacing: 0px;
+text-align: center;
+}
+.execlusive_flx {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F4F5F6;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+.fitness-exe-p {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  color: #0A1F34;
+}
+.execlusive_flx  img{
+  max-width: 16px;
+  height: 20px;
+}
+ul.fitness-features {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom:20px;
+}
+ul.fitness-features li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 12px;
+ 
+  
+}
+ul.fitness-features li  span{
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0px;
+  font-weight: 500;
+  color: #0A1F34;
+}
+.activate-button.main_btnn {
+  /* margin: 30px 0 20px; */
+}
+
+.footer p {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color:#6C7985;
+  text-align: center;
+}
+
+.main_sticky_flex {
+  position: sticky;
+  bottom: 0;
+  background: #FFFFFF;
+  padding: 16px;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 
+      -4px 0 8px rgba(0, 0, 0, 0.1), 
+       4px 0 8px rgba(0, 0, 0, 0.1);  
+}
+.main_reltive .fitness-images{
+  position: relative;
+}
+.fitness-images img{
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+}
+.fitpasss_b {
+  position: absolute;
+  top: 74%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.logo img {
+  width: 100%;
+  object-fit: contain;
+  display: flex;
+}
+.logo {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,180 @@
+<section class="fitness-membership-section">
+  <div class="container">
+    <!-- TOP IMAGES -->
+    <div class="main_reltive">
+      <div class="fitness-images">
+        {% if section.settings.image_1 != blank %}
+          <img src="{{ section.settings.image_1 | img_url: 'master' }}" alt="Image 1" width="" height="">
+        {% endif %}
+        <div class="logo">
+          {% if section.settings.logo != blank %}
+            <img src="{{ section.settings.logo | img_url: 'master' }}" alt="Image 1" width="" height="">
+          {% endif %}
+        </div>
+        <div class="fitpasss_b">
+          <h2 class="fitness-heading">{{ section.settings.heading }}</h2>
+          <!-- SUBHEADING -->
+          <p class="fitness-subheading">{{ section.settings.subheading }}</p>
+        </div>
+      </div>
+      <!-- HEADING -->
+    </div>
+    <div class="main_container">
+      {% comment %} Exclusive {% endcomment %}
+      <div class="execlusive_flx">
+        <p class="fitness-exe-p">{{ section.settings.exclusive }}</p>
+        {% if section.settings.image_2 != blank %}
+          <img src="{{ section.settings.image_2 | img_url: '400x' }}" alt="Image 1" width="" height="">
+        {% endif %}
+      </div>
+
+      <div class="line-with-text">
+        <p>{{ section.settings.timeline_heading }}</p>
+      </div>
+
+      <!-- FEATURES LIST -->
+      <ul class="fitness-features">
+        {% for block in section.blocks %}
+          <li class="feature-item">
+            {% if block.settings.icon %}
+              <img src="{{ block.settings.icon | img_url: '100x' }}" alt="icon" width="" height="">
+            {% endif %}
+            <span>{{ block.settings.text }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="main_sticky_flex">
+      <button class="activate-button main_btnn" id="fitneessId">
+        {{ section.settings.button_text }}
+      </button>
+      <div class="footer">
+        {{ section.settings.footer }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const main_btn = document.querySelector('#fitneessId');
+
+    if (!main_btn) {
+      console.log('Button not found');
+      return;
+    }
+
+    main_btn.addEventListener('click', async () => {
+      console.log('Button clicked!');
+
+      try {
+        const response = await fetch('https://services.fitpass.dev/cred/order-confirmation', {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+          "Authorization": "l9xGmxeF6GU4djgsMDBWG9ui0xeDhvR7qxbWq1M9" 
+          "X_FITPASS_APP_KEY": "fhskjdhfkjsdahgkjadsfmgbasdiughdiag",
+            user_id: 191919193174,
+            fitpass_id: 98765789,
+            app_version: '8.1.2',
+            device_os: '15',
+            device_id: '45231',
+            device_type: 'android',
+            device_name: 'android',
+            access_source: 'customer-android-app',
+            customer_mobile: '9212613245',
+            customer_name: 'Testing',
+          },
+          body: JSON.stringify({
+            user: 'Testing',
+            action: 'activate',
+          }),
+        });
+
+        const data = await response.json();
+        console.log('API Response:', data);
+      } catch (error) {
+        console.error('API Error:', error);
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Fitness Membership",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Top Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Execlusive Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Top Image Logo"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub Heading",
+      "default": "Unlock your 7-day trial in just 3 steps"
+    },
+    {
+      "type": "text",
+      "id": "exclusive",
+      "label": "Exclusive",
+      "default": "Exclusively for Cred customers only"
+    },
+    { "type": "text", "id": "timeline_heading", "label": "Timeline Heading", "default": "WHEN WILL YOU BE CHARGED" },
+
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Get Started"
+    },
+    {
+      "type": "richtext",
+      "id": "footer",
+      "label": "Add Footer"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Feature Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Feature Text",
+          "default": "Feature description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Fitness Membership Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,35 @@
+<div class="payment_complemation">
+  <div class="main_container">
+    <div class="payment_success_box">
+      {% if section.settings.title_text != blank %}
+        <h2>{{ section.settings.title_text }}</h2>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Payment completion",
+  "class": "payment-completion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_text",
+      "label": "Title",
+      "default": "Payment completion with CRED Pay"
+    },
+    {
+      "type": "color",
+      "id": "body_text",
+      "label": "Body text color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Payment completion"
+    }
+  ]
+}
+{% endschema %}
