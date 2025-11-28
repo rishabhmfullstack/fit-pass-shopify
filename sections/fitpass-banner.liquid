@@ -57,7 +57,7 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  {% comment %} document.addEventListener('DOMContentLoaded', () => {
     const main_btn = document.querySelector('#fitneessId');
 
     if (!main_btn) {
@@ -66,15 +66,15 @@
     }
 
     main_btn.addEventListener('click', async () => {
-      console.log('Button clicked!');
-
       try {
         const response = await fetch('https://services.fitpass.dev/cred/order-confirmation', {
           method: 'POST',
           headers: {
             "Content-Type": "application/json",
-          "Authorization": "l9xGmxeF6GU4djgsMDBWG9ui0xeDhvR7qxbWq1M9" 
-          "X_FITPASS_APP_KEY": "fhskjdhfkjsdahgkjadsfmgbasdiughdiag",
+            "Authorization": "l9xGmxeF6GU4djgsMDBWG9ui0xeDhvR7qxbWq1M9",
+            "X_FITPASS_APP_KEY": "fhskjdhfkjsdahgkjadsfmgbasdiughdiag"
+          },
+          body: JSON.stringify({
             user_id: 191919193174,
             fitpass_id: 98765789,
             app_version: '8.1.2',
@@ -85,20 +85,52 @@
             access_source: 'customer-android-app',
             customer_mobile: '9212613245',
             customer_name: 'Testing',
-          },
-          body: JSON.stringify({
-            user: 'Testing',
-            action: 'activate',
-          }),
+            action: 'activate'
+          })
         });
-
+    
         const data = await response.json();
-        console.log('API Response:', data);
+        console.log("API Response:", data);
+    
+      } catch (err) {
+        console.error("API Error:", err);
+      }
+    });
+    
+  }); {% endcomment %}
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector("#fitneessId");
+  
+    btn.addEventListener("click", async () => {
+      try {
+        // payload same as React
+        const payload = {
+          latitude: window.lat,
+          longitude: window.lng,
+          merchant_transaction_number: "TXN-191919193174-1763126888"
+        };
+  
+        const response = await fetch("/apps/fitpass/order-confirmation", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+  
+        const data = await response.json();
+        console.log("Fitpass Response:", data);
+  
+        window.location.href = "/pages/cred-special-plan-v2";
+  
       } catch (error) {
-        console.error('API Error:', error);
+        console.error("Error:", error);
       }
     });
   });
+  
 </script>
 
 {% schema %}
