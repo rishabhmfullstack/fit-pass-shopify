@@ -40,6 +40,50 @@
     },
     "fitpass_banner_QFaHzd": {
       "type": "fitpass-banner",
+      "blocks": {
+        "feature_h4j8Gh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Barbell.png",
+            "text": "Access to 8,100+ premium gyms & fitness centres across 75+ cities"
+          }
+        },
+        "feature_mUUwVz": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Carrot.png",
+            "text": "Expert nutritionist consults, personalised diet plans & meal logs"
+          }
+        },
+        "feature_JGMC7N": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/UserRectangle_69ef6b26-98b7-4817-829f-aa1d0af961fe.png",
+            "text": "A.I. enabled personal fitness coaching"
+          }
+        },
+        "feature_UxpYjw": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/MonitorPlay.png",
+            "text": "Access to unlimited virtual classes from 4,000+ global studios"
+          }
+        },
+        "feature_Lttxdc": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Stethoscope.png",
+            "text": "Free doctor consultations, health check-up, pharmacy voucher, discounts, savings & more"
+          }
+        }
+      },
+      "block_order": [
+        "feature_h4j8Gh",
+        "feature_mUUwVz",
+        "feature_JGMC7N",
+        "feature_UxpYjw",
+        "feature_Lttxdc"
+      ],
       "name": "Fitness Membership Section",
       "settings": {
         "image_1": "shopify://shop_images/Group_1707481105_1.png",
@@ -50,7 +94,7 @@
         "exclusive": "Exclusively for Cred customers only",
         "timeline_heading": "WHEN WILL YOU BE CHARGED",
         "button_text": "Get Started",
-        "footer": ""
+        "footer": "<p>By clicking on “get started” you agree to the  Terms of service and Privacy policy</p>"
       }
     }
   },
