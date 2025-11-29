@@ -17,53 +17,17 @@
         "padding_bottom": 28
       }
     },
-    "free_trial_plan_tJb8QD": {
-      "type": "free-trial-plan",
-      "blocks": {
-        "day_item_CiNX7H": {
-          "type": "day_item",
-          "settings": {
-            "day_title": "Today",
-            "day_desc": "Start your fitness journey with your 7-day free trial on FITPASS"
-          }
-        },
-        "day_item_V3Q3A9": {
-          "type": "day_item",
-          "settings": {
-            "day_title": "Day 5",
-            "day_desc": "We will remind you that your free trial is ending"
-          }
-        },
-        "day_item_z7eGf9": {
-          "type": "day_item",
-          "settings": {
-            "day_title": "Day 7",
-            "day_desc": "You will be charged ₹3,999 on 17 Nov, 2025 for 3 months. Cancel atleast one day before."
-          }
-        }
-      },
-      "block_order": [
-        "day_item_CiNX7H",
-        "day_item_V3Q3A9",
-        "day_item_z7eGf9"
-      ],
-      "name": "Free Trial Section",
+    "payment_completion_9xRA8X": {
+      "type": "payment-completion",
+      "name": "Payment completion",
       "settings": {
-        "backgroundimage": "shopify://shop_images/Group_1437256156_3.png",
-        "backgorund_side": "shopify://shop_images/Group_1707481117_1.png",
-        "topheading": "Your plan",
-        "bg_color": "#f8f8f8",
-        "heading": "Unlock your",
-        "title": "7 day Free Trial",
-        "subtext": "<p>Renews at <strong>₹1,999 every month</strong><br/>after 7 days.</p>",
-        "timeline_heading": "When will you be charged",
-        "footer_note": "₹2 will be charged to validate payment method.",
-        "button_label": "Activate now"
+        "title_text": "Payment completion with CRED Pay",
+        "body_text": "#000000"
       }
     }
   },
   "order": [
     "main",
-    "free_trial_plan_tJb8QD"
+    "payment_completion_9xRA8X"
   ]
 }
