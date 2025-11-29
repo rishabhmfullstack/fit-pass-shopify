@@ -87,12 +87,13 @@
       "name": "Fitness Membership Section",
       "settings": {
         "image_1": "shopify://shop_images/Group_1707481105_1.png",
+        "urlId": "",
         "image_2": "shopify://shop_images/e7e3995ad7814c60e53b492b5ef3fdfc9b3c61ba.png",
         "logo": "shopify://shop_images/Isolation_Mode.png",
         "heading": "<p>Your all-in-one <br/><strong>Fitness Membership</strong></p>",
         "subheading": "Unlock your 7-day trial in just 3 steps",
         "exclusive": "Exclusively for Cred customers only",
-        "timeline_heading": "WHEN WILL YOU BE CHARGED",
+        "timeline_heading": "Plan includes",
         "button_text": "Get Started",
         "footer": "<p>By clicking on “get started” you agree to the  Terms of service and Privacy policy</p>"
       }
