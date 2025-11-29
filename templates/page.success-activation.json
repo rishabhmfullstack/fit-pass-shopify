@@ -16,9 +16,48 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "success_activation_screen_Uxqf8g": {
+      "type": "success-activation-screen",
+      "blocks": {
+        "app_content_LhnzTj": {
+          "type": "app_content",
+          "settings": {
+            "appstore_img": "shopify://shop_images/Vector.png",
+            "appstore_sub": "Get it on",
+            "appestore_title": "Google Play",
+            "appstore_link": ""
+          }
+        },
+        "app_content_bFwjbC": {
+          "type": "app_content",
+          "settings": {
+            "appstore_img": "shopify://shop_images/Vector_1.png",
+            "appstore_sub": "Download on the",
+            "appestore_title": "Apple Store",
+            "appstore_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "app_content_LhnzTj",
+        "app_content_bFwjbC"
+      ],
+      "name": "Success Activation Screen",
+      "settings": {
+        "backgroundimage": "shopify://shop_images/Mask_group_1.png",
+        "successIcon": "shopify://shop_images/Frame_1437255226.png",
+        "heading": "Your 7 Day Free Trial has been activated",
+        "description": "Access 8,100+ fitness centres, expert nutritionists, AI personal coaching, doctors, health checkups, and so much more — all with a single pass",
+        "download_title": "Download the our app & start your fitness journey",
+        "bottom_title": "Visit 35,000+ Gyms",
+        "bottom_highlight": "with amazing ambience ✨",
+        "downloadimg": "shopify://shop_images/Frame_1437255796_1.png"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "success_activation_screen_Uxqf8g"
   ]
 }
