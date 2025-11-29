@@ -16,18 +16,9 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
-    },
-    "payment_completion_9xRA8X": {
-      "type": "payment-completion",
-      "name": "Payment completion",
-      "settings": {
-        "title_text": "Payment completion with CRED Pay",
-        "body_text": "#000000"
-      }
     }
   },
   "order": [
-    "main",
-    "payment_completion_9xRA8X"
+    "main"
   ]
 }
