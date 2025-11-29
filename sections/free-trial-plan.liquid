@@ -1,8 +1,10 @@
-<section class="free-trial-section" style="background: {{ section.settings.bg_color }};">
+<section class="free-trial-section size_mobile" style="background: {{ section.settings.bg_color }}">
   <div class="main_container">
+    {% render 'top-svg' %}
+
     <!-- Back icon (optional) -->
     <div class="top-icons">
-      <span class="back-icon">←</span>
+      <span class="back-icon" id="nextArrow" style="cursor: pointer">←</span>
       <h3>{{ section.settings.topheading }}</h3>
     </div>
     <div class="free_trial_box">
@@ -49,12 +51,110 @@
       </div>
       <p class="footer-note">{{ section.settings.footer_note }}</p>
 
-      <button class="activate-button">
-        {{ section.settings.button_label }}
+      <button class="activate-button" id="freeId">
+        <span class="btn-text">
+           <span class="btn-loader" style="display:none;"> {% render 'loader' %}</span>
+           {{ section.settings.button_label }}
+        </span>
+        
       </button>
     </div>
   </div>
+  <div class="bottom_Line">
+    {% render 'bottomline' %}
+  </div>
 </section>
+
+{% comment %} api call here {% endcomment %}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const freeId = document.querySelector("#freeId");
+
+    if (!freeId) {
+      console.log("Button not found");
+      return;
+    }
+
+    freeId.addEventListener("click", async () => {
+      freeId.classList.add("loading");
+      try {
+        const response = await fetch("https://services.fitpass.dev/cred/pending-order", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-FITPASS-PAYLOAD": JSON.stringify({
+              user_id: 191919193173,
+              fitpass_id: 98765783,
+              app_version: "8.1.2",
+              device_os: "15",
+              device_id: "45231",
+              device_type: "android",
+              device_name: "android",
+              access_source: "customer-android-app",
+              customer_mobile: "9212613245",
+              customer_name: "Testing"
+            }),
+            "X-FITPASS-APP-KEY": "fhskjdhfkjsdahgkjadsfmgbasdiughdiag",
+            "X-AUTH-TOKEN": "l9xGmxeF6GU4djgsMDBWG9ui0xeDhvR7qxbWq1M9"
+          },
+          body: JSON.stringify({
+            product_type: 22,
+            after_discount_price: 2199,
+            total_order_price: 5330,
+            membership_plan_ids: [5305],
+            geo_location: { lat: 28.682875, long: 77.200337 },
+            sale_discount: 3131,
+            coupon_discount_details: { coupon_code: "" },
+            redeemable_amount: { fitcash: 0, "e-voucher": 0 },
+            fitshop_product_details: null,
+            corporate_id: 0,
+            user_type: 1,
+            user_source: [
+              { key: "campaign_name", value: "cred-subscription-offer" },
+              { key: "referral_source", value: "" },
+              { key: "referral_channel", value: "" }
+            ],
+            device_details: {
+              ip: "192.168.128.130",
+              app_version: "5.3.4",
+              init_channel: "App",
+              device_id: "491DF849-E365-42A0-AC9C-43969FDB1DA3",
+              device_name: "iPhone10,3",
+              device_type: "iOS",
+              device_os: "15.5",
+              user_agent:
+                "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+            },
+            redirect_url: "/cred-special-plan-payment",
+            screen_source: "",
+            theme: "",
+            merchant_transaction_number: "",
+            merchant_order_number: ""
+          })
+        });
+
+        const data = await response.json();
+        console.log("API Response:", data);
+
+        if (response.ok) {
+          window.location.href = "/payment-getway";
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch (err) {
+        console.error("API Error:", err);
+      }
+      freeId.classList.remove("loading");
+    });
+  });
+
+
+  {% comment %} PrevArrow {% endcomment %}
+   const nextArrow = document.querySelector("#nextArrow");
+   nextArrow.addEventListener("click", ()=> {
+    window.location.href = "/";
+  })
+</script>
 
 {% schema %}
 {

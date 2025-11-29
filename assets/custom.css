@@ -23,10 +23,20 @@
      }
   
   .main_container {
-    padding: 20px;
+    padding: 0 20px 10px;
   }
-
-
+.size_mobile {
+  max-width: 450px;
+  margin: 0 auto;
+  position: relative;
+  /* min-height: 450px; */
+  
+}
+.bottomLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
   /* payment-completion.liquid css Start */
@@ -305,7 +315,7 @@ p.sub_label {
   font-weight: 400;
   font-style: Regular;
   font-family: 'Figtree', sans-serif;
-  color: #0A1F34;
+  color: #6C7985;
   margin: 1px 0 0;
 }
   .footer-note {
@@ -335,6 +345,9 @@ p.sub_label {
     align-items: center;
     text-align: center;
     margin: 28px 0 16px;
+    
+    /* font-weight: 700; */
+  
   }
   
   .line-with-text::before,
@@ -348,7 +361,7 @@ p.sub_label {
     font-size: 10px;
     letter-spacing: 0.6px;
     line-height: 100%;
-    color: #0A1F34;
+    color: #6C7985;
     font-style: Bold;
     font-weight: 700;
     text-transform: uppercase;
@@ -369,18 +382,20 @@ letter-spacing: 0px;
 text-align: center;
 vertical-align: bottom;
 margin:0;
+
 }
 .fitness-heading p strong {
   color:#DC4144;
 }
 .fitness-subheading{
-  font-family: Figtree;
+font-family: 'Figtree', sans-serif;
 font-weight: 400;
 font-style: Regular;
 font-size: 16px;
 line-height: 22px;
 letter-spacing: 0px;
 text-align: center;
+color: #6C7985;
 }
 .execlusive_flx {
   display: flex;
@@ -477,4 +492,23 @@ ul.fitness-features li  span{
   top: 12%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.loader {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-right: 10px;
+  
+}
+.loader svg {
+  display: inline-block;
+}
+
+.activate-button.loading .btn-loader {
+  display: inline-block !important;
+}
+.activate-button.loading {
+  opacity: 0.7;
+  pointer-events: none;
 }

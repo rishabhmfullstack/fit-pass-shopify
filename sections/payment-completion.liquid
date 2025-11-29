@@ -1,4 +1,4 @@
-<div class="payment_complemation">
+<div class="payment_complemation size_mobile"  >
   <div class="main_container">
     <div class="payment_success_box">
       {% if section.settings.title_text != blank %}
@@ -6,8 +6,22 @@
       {% endif %}
     </div>
   </div>
+  <div class="bottom_Line">
+    {% render 'bottomline' %}
+  </div>
+  
 </div>
+<script>
+  setTimeout(() => {
+    window.location.href = "/pages/success-activation";
+  }, 3000);
 
+
+
+
+
+  
+</script>
 {% schema %}
 {
   "name": "Payment completion",

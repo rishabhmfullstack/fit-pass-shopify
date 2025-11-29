@@ -1,10 +1,13 @@
-<section class="fitness-membership-section">
+<section class="fitness-membership-section size_mobile">
   <div class="container">
     <!-- TOP IMAGES -->
     <div class="main_reltive">
       <div class="fitness-images">
+        {% render 'top-svg' %}
         {% if section.settings.image_1 != blank %}
-          <img src="{{ section.settings.image_1 | img_url: 'master' }}" alt="Image 1" width="" height="">
+          <a href="{{ section.settings.urlId }}" style="textdecoration: none">
+            <img src="{{ section.settings.image_1 | img_url: 'master' }}" alt="Image 1" width="" height="">
+          </a>
         {% endif %}
         <div class="logo">
           {% if section.settings.logo != blank %}
@@ -46,18 +49,26 @@
     </div>
 
     <div class="main_sticky_flex">
-      <button class="activate-button main_btnn" id="fitneessId">
-        {{ section.settings.button_text }}
+            <button class="activate-button" id="fitneessId">
+        <span class="btn-text main_btnn">
+           <span class="btn-loader" style="display:none;"> {% render 'loader' %}</span>
+           {{ section.settings.button_text }}
+        </span>
+        
       </button>
+
       <div class="footer">
         {{ section.settings.footer }}
       </div>
+    </div>
+    <div class="bottom_Line">
+      {% render 'bottomline' %}
     </div>
   </div>
 </section>
 
 <script>
-  {% comment %} document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const main_btn = document.querySelector('#fitneessId');
 
     if (!main_btn) {
@@ -66,71 +77,48 @@
     }
 
     main_btn.addEventListener('click', async () => {
+      main_btn.classList.add('loading');
       try {
         const response = await fetch('https://services.fitpass.dev/cred/order-confirmation', {
           method: 'POST',
           headers: {
-            "Content-Type": "application/json",
-            "Authorization": "l9xGmxeF6GU4djgsMDBWG9ui0xeDhvR7qxbWq1M9",
-            "X_FITPASS_APP_KEY": "fhskjdhfkjsdahgkjadsfmgbasdiughdiag"
+            'Content-Type': 'application/json',
+            'X-FITPASS-PAYLOAD': JSON.stringify({
+              user_id: 191919193174,
+              fitpass_id: 98765789,
+              app_version: '8.1.2',
+              device_os: '15',
+              device_id: '45231',
+              device_type: 'android',
+              device_name: 'android',
+              access_source: 'customer-android-app',
+              customer_mobile: '9212613245',
+              customer_name: 'Testing',
+            }),
+            'X-FITPASS-APP-KEY': 'fhskjdhfkjsdahgkjadsfmgbasdiughdiag',
+            'X-AUTH-TOKEN': 'l9xGmxeF6GU4djgsMDBWG9ui0xeDhvR7qxbWq1M9',
           },
           body: JSON.stringify({
-            user_id: 191919193174,
-            fitpass_id: 98765789,
-            app_version: '8.1.2',
-            device_os: '15',
-            device_id: '45231',
-            device_type: 'android',
-            device_name: 'android',
-            access_source: 'customer-android-app',
-            customer_mobile: '9212613245',
-            customer_name: 'Testing',
-            action: 'activate'
-          })
+            latitude: 28.6327,
+            longitude: 77.2198,
+            merchant_transaction_number: 'TXN-191919193174-1763126888',
+          }),
         });
-    
+
         const data = await response.json();
-        console.log("API Response:", data);
-    
+        console.log('API Response:', data);
+
+        if (response.ok) {
+          window.location.href = '/pages/free-trial';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
       } catch (err) {
-        console.error("API Error:", err);
+        console.error('API Error:', err);
       }
-    });
-    
-  }); {% endcomment %}
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.querySelector("#fitneessId");
-  
-    btn.addEventListener("click", async () => {
-      try {
-        // payload same as React
-        const payload = {
-          latitude: window.lat,
-          longitude: window.lng,
-          merchant_transaction_number: "TXN-191919193174-1763126888"
-        };
-  
-        const response = await fetch("/apps/fitpass/order-confirmation", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
-  
-        const data = await response.json();
-        console.log("Fitpass Response:", data);
-  
-        window.location.href = "/pages/cred-special-plan-v2";
-  
-      } catch (error) {
-        console.error("Error:", error);
-      }
+      main_btn.classList.remove('loading');
     });
   });
-  
 </script>
 
 {% schema %}
@@ -141,6 +129,11 @@
       "type": "image_picker",
       "id": "image_1",
       "label": "Top Image 1"
+    },
+    {
+      "type": "url",
+      "id": "urlId",
+      "label": "BannerUrl"
     },
     {
       "type": "image_picker",

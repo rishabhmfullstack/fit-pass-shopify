@@ -1,0 +1,3 @@
+# Ignore the entire .shopify directory
+# Ignore node_modules
+node_modules/

@@ -1,0 +1,23 @@
+<div class="paymentgetway_wrapper" id="payment-section">
+    <h3>Payment Getway</h3>
+</div>
+
+<script>
+   setTimeout(() => {
+    document.getElementById("payment-section").style.display = "none";
+    window.location.href = "/pages/sucess-page";
+  }, 2000);
+</script>
+
+{% schema %}
+{
+  "name": "Payment Getway",
+  "class": "payment-getway",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Payment Getway"
+    }
+  ]
+}
+{% endschema %}

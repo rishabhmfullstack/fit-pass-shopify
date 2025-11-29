@@ -1,5 +1,6 @@
-<section class="success-screen-container" style="background: {{ section.settings.bg_color }};">
+<section class="success-screen-container size_mobile" style="background: {{ section.settings.bg_color }};">
   <div class="backgorund_image">
+    {% render 'top-svg' %}
     <img src="{{ section.settings.backgroundimage | img_url: 'master' }}" width="" height="" class="backgorund_image">
     <div class="success-icon">
       <span>
@@ -17,7 +18,7 @@
         <h2>{{ section.settings.download_title }}</h2>
       </div>
       <div class="download_main_image">
-        <img src="{{ section.settings.downloadimg | img_url: '200x' }}" width="" height="">
+        <img src="{{ section.settings.downloadimg | img_url: 'master' }}" width="" height="">
       </div>
       <!-- App Store Buttons -->
       <div class="app-buttons">
@@ -42,7 +43,11 @@
       </div>
     </div>
   </div>
+  <div class="bottom_Line">
+    {% render 'bottomline' %}
+  </div>
 </section>
+
 {% schema %}
 {
   "name": "Success Activation Screen",
