@@ -504,7 +504,13 @@ ul.fitness-features li  span{
 .loader svg {
   display: inline-block;
 }
-
+span.btn-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
 .activate-button.loading .btn-loader {
   display: inline-block !important;
 }
