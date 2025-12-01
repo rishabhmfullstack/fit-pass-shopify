@@ -95,7 +95,7 @@
         "exclusive": "Exclusively for Cred customers only",
         "timeline_heading": "Plan includes",
         "button_text": "Get Started",
-        "footer": "<p>By clicking on “get started” you agree to the  Terms of service and Privacy policy</p>"
+        "footer": "<p>By clicking on “get started” you agree to the  <a href=\"#\" target=\"_blank\" title=\"#\">Terms of service</a> and <a href=\"/pages/data-sharing-opt-out\" title=\"Your privacy choices\">Privacy policy</a></p>"
       }
     }
   },
