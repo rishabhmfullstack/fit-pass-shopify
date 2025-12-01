@@ -84,6 +84,9 @@
         "feature_UxpYjw",
         "feature_Lttxdc"
       ],
+      "custom_css": [
+        ".footer a {color: #6c7985;}"
+      ],
       "name": "Fitness Membership Section",
       "settings": {
         "image_1": "shopify://shop_images/Group_1707481105_1.png",
