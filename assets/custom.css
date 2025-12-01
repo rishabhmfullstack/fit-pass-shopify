@@ -367,8 +367,27 @@ p.sub_label {
     text-transform: uppercase;
     margin: 0;
   }
-    
-  
+  @media (max-width: 320px) {
+    .backgorund_image .success-icon {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+   }
+  .success-icon .success-title {
+    font-size: 25px;
+  }
+  .download_main_title h2 {
+    font-size: 22px;
+  }
+  .app_col {
+    padding: 11.21px 11.87px 11.21px 20px;
+}
+.main_container .success_content {
+  margin: 10px 0;
+  padding: 0 20px;
+}
+}
+
   /* Free-trial.liquid css End */
 
 
