@@ -65,6 +65,14 @@
   </div>
 </section>
 
+<!-- POPUP MODAL -->
+<div id="apiPopup" class="popup-overlay" style="display:none;">
+  <div class="popup-box">
+    <span class="popup-close">&times;</span>
+    <pre id="apiMessage">Loading...</pre>
+  </div>
+</div>
+
 {% comment %} api call here {% endcomment %}
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -74,6 +82,11 @@
       console.log("Button not found");
       return;
     }
+
+    const popup = document.getElementById("apiPopup");
+    const popupMessage = document.getElementById("apiMessage");
+    const popupClose = document.querySelector(".popup-close");
+
 
     freeId.addEventListener("click", async () => {
       freeId.classList.add("loading");
@@ -136,12 +149,28 @@
         const data = await response.json();
         console.log("API Response:", data);
 
+        // Show popup with API Response
+      let errorMsg = data?.meta?.description || "Unknown error";
+
+      popupMessage.textContent = errorMsg;
+      popup.style.display = "flex";
+
+      popupClose.addEventListener("click", () => {
+        popup.style.display = "none";
+      });
+
+      popupClose.addEventListener("click", () => {
+        popup.style.display = "none";
+      });
+
+
+
         if (response.ok) {
           window.location.href = "/payment-getway";
-        } else {
-          alert("Something went wrong. Please try again.");
         }
       } catch (err) {
+        popupMessage.textContent = err.message || "Unexpected error";
+        popup.style.display = "flex";
         console.error("API Error:", err);
       }
       freeId.classList.remove("loading");

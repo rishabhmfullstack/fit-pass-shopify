@@ -512,3 +512,46 @@ ul.fitness-features li  span{
   opacity: 0.7;
   pointer-events: none;
 }
+
+
+/* POPUP */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  text-align: left;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+#apiMessage {
+  font-size: 14px;
+  white-space: pre-wrap;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 6px;
+}
